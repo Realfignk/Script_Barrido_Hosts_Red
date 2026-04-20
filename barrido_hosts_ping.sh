@@ -22,11 +22,8 @@ cont=1
 echo "--------------------------------"
 echo "Iniciando barrido de red..."
 echo "--------------------------------"
-while true; do
+while (( cont < 255 )) ; do
     ip_dir="$red.$cont"
-    if test "$cont" == "255"; then
-	exit 0
-    fi
     if ping -w 1 -c 1 "$ip_dir" &> /dev/null; then
        echo "Host con dirección $ip_dir activo."
     fi

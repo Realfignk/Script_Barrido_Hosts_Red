@@ -12,13 +12,20 @@ dir_red="$1"
 red=${dir_red%.*}
 
 cont=1
+echo "--------------------------------"
+echo "Iniciando barrido de red..."
+echo "--------------------------------"
 while true; do
     ip_dir="$red.$cont"
     if test "$cont" == "255"; then
 	exit 0
     fi
     if ping -w 1 -c 1 "$ip_dir" &> /dev/null; then
-       echo "Activo: $ip_dir"
+       echo "Host con dirección $ip_dir activo."
     fi
     (( cont++ ))
 done
+
+echo "--------------------------------"
+echo "Proceso de barrido Finalizado."
+echo "--------------------------------"

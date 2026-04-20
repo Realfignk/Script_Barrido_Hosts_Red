@@ -4,9 +4,16 @@ help() {
     echo "$(basename "$0") direccion_red"
     echo "El script hace un barrido de las direcciones ip de una red para ver que hosts estan activos en red (existen.)"
     echo "Por defecto solo hace ping a redes /24."
+	echo "Opciones:"
+	echo "    -h    --help  Muestra esta ayuda."
     echo "Parámetros:"
     echo "    direccion_red: direccion de red a la cual hacer ping."
 }
+
+if test "$1" == "-h" or test "$1" == "--help" ; then
+	help()
+	exit 0
+fi
 
 dir_red="$1"
 red=${dir_red%.*}

@@ -11,7 +11,7 @@ help() {
 }
 
 if test "$1" == "-h" or test "$1" == "--help" ; then
-	help()
+	help
 	exit 0
 fi
 
@@ -25,7 +25,7 @@ echo "--------------------------------"
 while (( cont < 255 )) ; do
     ip_dir="$red.$cont"
     if ping -w 1 -c 1 "$ip_dir" &> /dev/null; then
-       echo "Host con dirección $ip_dir activo."
+       echo "Host con dirección $dir_red$ip_dir activo."
     fi
     (( cont++ ))
 done

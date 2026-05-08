@@ -15,6 +15,12 @@ if test "$1" == "-h" || test "$1" == "--help" ; then
 	exit 0
 fi
 
+if test -z "$1"; then
+	echo "Debes mandar la dirección ip de un host o de la red."
+	help
+	exit 0
+fi
+
 dir_red="$1"
 red=${dir_red%.*}
 

@@ -10,7 +10,7 @@ help() {
     echo "    direccion_red: direccion de red a la cual hacer ping."
 }
 
-if test "$1" == "-h" or test "$1" == "--help" ; then
+if test "$1" == "-h" || test "$1" == "--help" ; then
 	help
 	exit 0
 fi
